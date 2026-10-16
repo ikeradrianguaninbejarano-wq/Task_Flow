@@ -99,6 +99,8 @@ button:focus {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    list-style: none;
+    overflow-wrap: anywhere;
 }
 
 /* Adaptación para celulares */
@@ -117,7 +119,7 @@ button:focus {
     }
 }
 .pendiente {
-    color: #d97706;
+    color: #a64b00;
     font-size: 14px;
     font-weight: bold;
     margin-left: 8px;

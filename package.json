@@ -1,0 +1,15 @@
+{
+  "name": "task-flow",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "npm run test:html && npm run test:e2e",
+    "test:html": "html-validate index.html",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.55.0",
+    "html-validate": "^10.5.0"
+  }
+}

@@ -1,4 +1,5 @@
 const listaTareas = document.getElementById("lista-tareas");
+const estadoTareas = document.getElementById("estado-tareas");
 const formulario = document.getElementById("form-tarea");
 const inputTitulo = document.getElementById("titulo");
 const estadoConexion = document.getElementById("estado-conexion");
@@ -68,14 +69,14 @@ async function cargarTareas() {
 
             } else {
 
-                listaTareas.innerHTML =
-                    "<p>No existen tareas almacenadas localmente.</p>";
+                estadoTareas.textContent =
+                    "No existen tareas almacenadas localmente.";
             }
 
         } catch (errorLocal) {
 
-            listaTareas.innerHTML =
-                "<p>No se pudieron cargar las tareas.</p>";
+            estadoTareas.textContent =
+                "No se pudieron cargar las tareas.";
 
             console.error(errorLocal);
         }
@@ -90,10 +91,13 @@ async function cargarTareas() {
 function mostrarTareas(tareas) {
 
     listaTareas.innerHTML = "";
+    estadoTareas.textContent = tareas.length
+        ? `${tareas.length} tareas guardadas.`
+        : "No existen tareas almacenadas localmente.";
 
     tareas.forEach(tarea => {
 
-        const elemento = document.createElement("div");
+        const elemento = document.createElement("li");
 
         elemento.textContent =
             `${tarea.completed ? "✅" : "⬜"} ${tarea.title}`;

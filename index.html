@@ -16,9 +16,9 @@
         <h1>TaskFlow Offline</h1>
         <p>Gestiona tus tareas incluso sin conexión</p>
 
-        <div id="estado-conexion">
+        <p id="estado-conexion" role="status" aria-live="polite">
             🟢 En línea
-        </div>
+        </p>
     </header>
 
     <main>
@@ -46,9 +46,10 @@
         <section>
             <h2>Mis tareas</h2>
 
-            <div id="lista-tareas">
-                <p>Cargando tareas...</p>
-            </div>
+            <p id="estado-tareas" role="status" aria-live="polite">
+                Cargando tareas...
+            </p>
+            <ul id="lista-tareas"></ul>
         </section>
 
     </main>
